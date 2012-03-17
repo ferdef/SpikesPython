@@ -3,10 +3,14 @@ import sys
 def main():
 	print prueba()
 	print prueba2()
+	print prueba3()
 
 def to_upper(origin):
 	def new_origin():
-		return origin().upper()
+		try:
+			return origin().upper()
+		except:
+			return origin()
 	return new_origin
 
 class to_lower(object):
@@ -14,7 +18,10 @@ class to_lower(object):
 		self.f = origin
 
 	def __call__(self):
-		return self.f().lower() 
+		try:
+			return self.f().lower() 
+		except:
+			return self.f()
 
 @to_upper
 def prueba():
@@ -24,6 +31,11 @@ def prueba():
 @to_lower
 def prueba2():
 	t = "Text at the function"
+	return t
+
+@to_upper
+def prueba3():
+	t = 5
 	return t
 
 if __name__ == "__main__":
