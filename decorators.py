@@ -9,11 +9,12 @@ def to_upper(origin):
 		return origin().upper()
 	return new_origin
 
+class to_lower(object):
+	def __init__(self, origin):
+		self.f = origin
 
-def to_lower(origin):
-	def new_origin():
-		return origin().lower()
-	return new_origin
+	def __call__(self):
+		return self.f().lower() 
 
 @to_upper
 def prueba():
