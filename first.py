@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 #
-# Author: FdF (cano266)
+# Author: FdF
 #
 
 import gevent
