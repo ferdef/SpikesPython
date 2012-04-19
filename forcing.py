@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 #
-# Author: FdF (cano266)
+# Author: FdF
 #
 
 """
@@ -19,4 +19,4 @@ print "Empezamos a las",datetime.now()
 for counter in range(10000):
     gevent.spawn(delayed_call)
 
-print "Terminó a las",datetime.now()
+print "Terminï¿½ a las",datetime.now()
