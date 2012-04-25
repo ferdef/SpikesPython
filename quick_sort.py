@@ -36,10 +36,8 @@ def quick_sort(elements):
                 upper_list.insert(0, element)
     if len(lower_list)>1:
         lower_list = quick_sort(lower_list)
-        pass
     if len(upper_list)>1:
         upper_list = quick_sort(upper_list)
-        pass
     new_list = lower_list + ['['+str(pivot[1])+']',] + upper_list
 
     return new_list
