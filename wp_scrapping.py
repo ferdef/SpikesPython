@@ -19,11 +19,20 @@ def get_price(soup):
     
 
 def fetch_urls():
+    elements = {}
     for name,url in URLS.iteritems():
+        print "Fetching {}...".format(name)
         data = get_data(url)
         soup = BeautifulSoup(data)
         price = get_price(soup)
+        elements[name] = price
+    return elements
+
+def show_elements(elements):
+    for name, price in elements.iteritems():
         print u"Item: {} - Price: {}".format(name, price)
+        
 
 if __name__ == '__main__':
-    fetch_urls()
+    elements = fetch_urls()
+    show_elements(elements)
